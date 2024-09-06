@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siwoo Air - Book Your Flight</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Siwoo Air - Flight Booking</h1>
+        <form id="bookingForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="class">Class</label>
+            <select id="class" name="class" required>
+                <option value="First">First</option>
+                <option value="Business">Business</option>
+                <option value="Economy">Economy</option>
+            </select>
+
+            <label for="date">Travel Date</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="destination">Destination</label>
+            <input type="text" id="destination" name="destination" required>
+
+            <button type="submit">Book Now</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const flightClass = document.getElementById('class').value;
+            const date = document.getElementById('date').value;
+            const destination = document.getElementById('destination').value;
+
+            const body = `Name: ${name}%0AEmail: ${email}%0AClass: ${flightClass}%0ADate: ${date}%0ADestination: ${destination}`;
+
+            window.location.href = `mailto:siwoo78717@icloud.com?subject=Flight%20Booking&body=${body}`;
+        });
+    </script>
+</body>
+</html>
